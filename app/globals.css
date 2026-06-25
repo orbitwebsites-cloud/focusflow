@@ -1,0 +1,40 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ── keyframes ── */
+@keyframes ff-fade {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0);   }
+}
+@keyframes ff-breathe {
+  0%, 100% { transform: scale(1);    opacity: 0.55; }
+  50%       { transform: scale(1.06); opacity: 0.8;  }
+}
+@keyframes ff-spin {
+  to { transform: rotate(360deg); }
+}
+
+/* ── base ── */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; }
+body {
+  font-family: "Nunito Sans", -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+  background: #f7f4ef;
+  color: #2d2825;
+  line-height: 1.6;
+}
+::selection { background: #cfe3da; }
+input, textarea, button { font-family: inherit; }
+input:focus-visible, textarea:focus-visible, button:focus-visible, [tabindex]:focus-visible {
+  outline: 3px solid #6fa496;
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
